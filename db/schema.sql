@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS almonds_db;
+
+CREATE DATABASE almonds_db;
