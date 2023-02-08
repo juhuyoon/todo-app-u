@@ -19,4 +19,15 @@ router.post("/todo", async (req, res) => {
   }
 });
 
+router.get("/display", async (req, res) => {
+  try {
+    const fetchedData = await Todo.findAll();
+    // the above is returning an ARRAY OF SEQUELIZE OBJECTS
+    const serializedData = fetchedData.map((data) => data.get({ plain: true }));
+    res.render("display", { serializedData });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

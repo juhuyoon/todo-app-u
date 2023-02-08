@@ -1,0 +1,8 @@
+{{#each serializedData as |data|}}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{data.id}}</h5>
+    <p class="card-text">{{data.todo}}</p>
+  </div>
+</div>
+{{/each}}
